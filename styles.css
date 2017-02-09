@@ -1,0 +1,148 @@
+#addButton {
+	display: inline-block;
+}
+.top {
+	height: 50px;
+
+}
+
+.form {
+	margin-bottom: 20px;
+}
+
+#prices {
+	display:inline-block;
+	margin-right: 30px;
+}
+
+.header {
+	font-family: Oswald;
+	text-align: center;
+	font-size: 60px;
+}
+
+#title {
+
+	margin-right: 30px;
+	width:100%;
+}
+
+.inline {
+	display: inline;
+}
+#background-true {
+	background-color: gray;
+}
+.item-true {
+	text-decoration: line-through;
+}
+
+.image-true {
+	display: none;
+}
+
+#addButton {
+	margin-right: -12px;
+}
+
+@media (max-width: 1200px){
+#addButton {
+	margin-right: 6px;
+}
+}
+@media (max-width: 991px) {
+	#addButton {
+	margin-right: 22px;
+}
+}
+
+
+.back{
+	background-color: #f9f9f9;
+}
+#addTask {
+	margin-right: -29px;
+}
+
+#addPrice {
+	margin-right: -29px;
+}
+
+
+#addDescriptionLength {
+	width:119.2%;
+}
+
+@media (max-width: 1200px){
+#addDescriptionLength {
+	width:123.5%;
+}
+}
+
+@media (max-width: 767px){
+	#addDescriptionLength {
+	width:121%;
+}
+}
+
+#addDescription{
+	margin-right: 40px;
+}
+
+@media (max-width: 991px){
+	#addDescription{
+	margin-right: 22px;
+}
+}
+
+.btn {
+	display: inline-block;
+}
+#tableTask {
+	width:25%;
+}
+
+#tableDescription {
+	width:35%;
+}
+
+#tableImage {
+	width:9%;
+}
+#image {
+	width:100%;
+}
+
+#tableCheckbox{
+	width:2%;
+}
+#tableCheckbox p {
+	font-size: 15px;
+}
+
+#tableButtons {
+	width:9%;
+}
+
+
+
+b {
+	font-size: 30px;
+}
+
+li {
+	margin-left: 60px;
+	font-size: 18px;
+}
+li i {
+	font-size: 10px;
+}
+
+#check {
+	margin-left: 30px;
+}
+
+
+#price {
+	font-size: 25px;
+}

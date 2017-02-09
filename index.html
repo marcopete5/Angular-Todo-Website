@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='todoList'>
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Todo List</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles.css">
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js'></script>
+</head>
+<body ng-controller='mainController'>
+		
+		<div class="container-fluid top">
+			<div class="col-xs-12 ">
+				<h1 class="header">Tasks</h1>
+			</div>
+		</div>
+
+		<div class="container">
+			
+			<div class="row">
+				
+					
+					<form >
+						
+							<div class="form col-sm-1" id='addButton'>
+								<button class="btn btn-primary" ng-click='addTodo(newTodo)'>Add Task</button>
+							</div>
+
+							<div class="form col-sm-3 col-xs-12" id="addTask">
+								<input type="text" class="form-control" placeholder='Add Task' ng-model='newTodo.title'>
+							</div>
+
+							<div class="form col-sm-2 col-xs-12" id='addPrice'>
+								<input type="number" class="form-control" placeholder='Add Price' ng-model='newTodo.price'>
+							</div>
+
+							<div class="form col-sm-4 col-xs-10" id="addDescription">
+								<input type="text" class="form-control" id="addDescriptionLength" ng-model='newTodo.description' placeholder='Add Description'> 
+							</div>
+
+							<div class="form col-sm-2 col-xs-12" id="addImage">
+								<input type="text" class="form-control" placeholder='Add Image URL' ng-model='newTodo.imgUrl'>
+							</div>
+							
+							
+						
+
+						
+					</form>
+
+
+				</div>
+
+
+				<div class="row">
+								<div class="col-xs-12" ng-repeat='todo in allTodos track by $index'>
+									
+									<table class="table table-bordered">
+										<thead>
+											<tr class='back'>
+												<th>Task</th>
+												<th>Price</th>
+												<th>Description</th>
+												<th>Image</th>
+												<th>Completed</th>
+												<th>Edit</th>
+											</tr>
+										</thead>
+										<tbody >
+											<tr id="background-{{todo.completed}}" >
+											<td id='tableTask'>
+												<p ng-hide='editing' class="item-{{todo.completed}}">{{todo.title}}</p>
+												<input class='form-control' type="text" ng-model='todo.title' ng-show='editing' placeholder='task'>
+											</td>
+											<td id='tablePrice'>
+												<p id='price' ng-hide='editing' class="item-{{todo.completed}}">${{todo.price}}</p>
+												<input class='form-control' type="number" ng-show='editing' placeholder='price' ng-model='todo.price'>
+												</td>
+											<td id="tableDescription">
+												<p ng-hide='editing' class="item-{{todo.completed}}">{{todo.description}}</p>
+												<input class='form-control' type='text' ng-model='todo.description' ng-show='editing' placeholder='Description'>
+											</td>
+											<td id="tableImage">
+												<img src="{{todo.imgUrl}}" alt="" ng-hide='editing'  class='img-rounded image-{{todo.completed}}' id="image">
+												<input class='form-control' type="text" ng-show='editing' placeholder='Image Url' ng-model='todo.imgUrl'>
+											</td>
+											<td id="tableCheckbox">
+											<input type="checkbox" class="checkbox inline item-{{todo.completed}}" id="check" value='{{todo.completed}}' ng-click='checkedTodo(todo._id, todo.completed)' ng-model='todo.completed'>
+											<p>Completed?</p>
+											</td>
+											<td id="tableButtons">
+											<button class="btn btn-success glyphicon glyphicon-pencil" id='update' ng-click='editing = !editing'></button>
+											<button class="btn btn-danger glyphicon glyphicon-trash" id='delete' ng-hide='editing' ng-click='deleteTodo($index, todo._id)'></button>
+											
+										</td>
+									</tr>
+										</tbody>
+									</table>
+
+									
+									
+									
+								</div>
+							</div>
+
+			</div>
+			
+
+
+			
+		
+
+
+
+	<script src='app.js'></script>
+	<script src='services/httpservices.js'></script>
+</body>
+</html>
